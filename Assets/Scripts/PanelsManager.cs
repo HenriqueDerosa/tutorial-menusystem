@@ -24,6 +24,7 @@ public class PanelsManager : MonoBehaviour
             DisableAll();
             currentPanel = panel;
             currentPanel.gameObject.SetActive(true);
+            currentPanel.OnPanelEnable();
         }
     }
 
@@ -36,9 +37,9 @@ public class PanelsManager : MonoBehaviour
         for (int i = 0; i < panels.Count; i++)
         {
             if (panels[i].gameObject.activeInHierarchy) {
-                panels[i].gameObject.SetActive(false);
+                panels[i].OnPanelDisable();
             }
-            
+
         }
     }
 
